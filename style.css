@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato';
+}
+html,body{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(241, 241, 241);
+}
+
+  #startingOverlay{
+    width: 100%;
+    height: 100%;
+    background-color: #74b9ff;
+    position: fixed;
+    z-index: 8;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: animateScreen 4s cubic-bezier(0.19, 1, 0.22, 1) 5s both;
+}
+.Overlay{
+    width: 300px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    cursor: pointer;
+
+}
+.Overlay .card{
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    transition: 1.5s ease-in-out ;
+    backface-visibility: hidden;
+    transform: perspective(500px) rotateY(0deg);
+}
+.Overlay .card.front{
+    background-image: url('mc.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: animatecard 3s cubic-bezier(0.19, 1, 0.22, 1) 3s infinite both;
+}
+.Overlay .card.back{
+    background: url('m.jpg');
+    transform: perspective(1000px) rotateY(180deg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: animatecardback 3s cubic-bezier(0.19, 1, 0.22, 1) 3s infinite both;
+}
+.Overlay .card h2{
+    font-size: 2rem;
+    text-transform: uppercase;
+    transform: perspective(1000px) rotateZ(50px);
+    color: #fff;
+    margin-top: 15px;
+}
+.afterOverlay{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+    /* animation: animateScreen2 4s cubic-bezier(0.19, 1, 0.22, 1) 5s both; */
+}
+.afterOverlay video{
+    width: 100%;
+    position: fixed;
+    z-index: 6;
+}
+.mountainDiv{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 7;
+}
+.mountainDiv .mounts{
+    width: 100%;
+    height: 120%;
+    position: relative;
+    overflow: hidden;
+}
+.mountainDiv .mounts h2{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;font-size: 8rem;
+    letter-spacing: 2px;
+    color: rgb(231, 231, 231);
+ }
+.mountainDiv .mounts #img1{
+   position: absolute;
+   bottom: -100px;
+   right: -20px;
+   z-index: 9;
+   width: 100%;
+   height: 600px;
+}
+.mountainDiv .mounts #img2{
+  position: absolute;
+   bottom: -100px;
+   right: 0px;
+   left: 0;
+   z-index: 10;
+   width: 100%;
+}
+.afterOverlay nav{
+    width: 100%;
+    height: 70px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    z-index: 7;
+}
+.afterOverlay nav h2{ 
+color: rgb(77, 77, 77);
+font-size: 2rem;
+letter-spacing: 3px;
+
+}
+
+.afterOverlay nav button{ 
+background-color: #fff;
+width: 80px;
+height: 30px;
+border: none;
+outline: none;
+box-sizing: 0px 5px 0px 20px 1px rgba(0, 0, 0, 0.295); 
+border-radius: 8px;  
+cursor: pointer; 
+}
+
+@keyframes animatecard{
+
+    from{
+        transform: perspective(500px) rotateY(0deg);
+    }
+    to{
+        transform: perspective(500px) rotateY(180deg);
+    }
+}
+@keyframes animatecardback{
+
+    from{
+        transform: perspective(500px) rotateY(0deg);
+    }
+    to{
+        transform: perspective(500px) rotateY(360deg);
+    }
+}
+
+
+ @keyframes animateScreen{
+
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+@keyframes animateScreen2{
+
+    from{
+        transform: scale(.6);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+/*@keyframes perspectivebg{
+
+    from{
+         background-position: 0;
+    }
+    to{
+        background-position: 100px;
+    }
+}
+@keyframes perspectivebg2{
+
+    0%{
+         transform:scale(1.6) rotate(-15deg);
+    }
+    50%{
+        transform: scale(1) rotate(0deg);
+    }
+} */
