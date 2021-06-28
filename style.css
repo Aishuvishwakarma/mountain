@@ -74,15 +74,12 @@ html,body{
     position: fixed;
     top: 0;
     left: 0;
-    padding: 0 20px;
+    padding: 0 50px;
     z-index: 7;
 }
-.afterOverlay nav h2{ 
-    text-align: center;
-color: rgb(77, 77, 77);
-font-size: 2rem;
-letter-spacing: 3px;
-
+.afterOverlay nav img{ 
+    width: 50px;
+    height: 50px;
 }
 .afterOverlay nav button{ 
 background-color: #fff;
